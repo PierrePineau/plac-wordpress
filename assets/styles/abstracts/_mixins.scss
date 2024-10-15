@@ -1,0 +1,71 @@
+@mixin alpha($property, $color-variable, $opacity) {
+    $color-variable-h: var(#{$color-variable+'-h'});
+    $color-variable-s: var(#{$color-variable+'-s'});
+    $color-variable-l: var(#{$color-variable+'-l'});
+    #{$property}: hsla($color-variable-h, $color-variable-s, $color-variable-l, $opacity);
+}
+
+@mixin defineColorHSL($color, $hue, $saturation, $lightness){
+    #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+}
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+
+@mixin btn_padding($padding: 1, $coef: 0.15rem) {
+    padding: multiply( addition($padding, 1), $coef) multiply( addition($padding, 3), $coef);
+}
+
+@mixin carre($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin _flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin _container-content-p {
+    width: 100%;
+    max-width: $max-width;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media screen and (min-width: 1280px){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@mixin _transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+@mixin _shadow-b {
+    box-shadow: var(--shadow-b);
+}
+
+@mixin _imgCover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin _imgContain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@mixin _verticalText {
+    writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	justify-self: baseline;
+}

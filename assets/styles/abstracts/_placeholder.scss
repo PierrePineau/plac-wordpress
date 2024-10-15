@@ -1,0 +1,60 @@
+%absolute0 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+%flexCenter {
+	display: flex;
+	align-items: center;
+}
+
+%flexCenterCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+%flexCol {
+	display: flex;
+	flex-direction: column;
+}
+
+%flexColCenter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+%imgCover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+%imgContain {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+%verticalText{
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	justify-self: baseline;
+}
+
+%transition {
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 200ms;
+}
+
+%rounded {
+	border-radius: $rounded;
+}

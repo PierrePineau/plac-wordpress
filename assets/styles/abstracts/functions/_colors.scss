@@ -1,0 +1,63 @@
+/// Convertion hex to HSL
+///
+/// @access public
+/// @param {Color} $color - couleur à redéfinir
+/// @return {Color}.
+@function hsl-str($color) {
+    @return unquote("hsl(#{math.div(hue($color), 1deg)}, #{saturation($color)}, #{lightness($color)})");
+}
+
+/// Convertion hex to HSLA
+///
+/// @access public
+/// @param {Color} $color - couleur à redéfinir
+/// @param {Number} $opacity - pourcentage d'opacité de la couleur retournée
+/// @return {Color}.
+@function alpha($color, $opacity){
+    $color: str-replace($color, 'var(');
+    $color: str-replace($color, ')');
+    $color-h: var(#{$color+'-h'});
+    $color-s: var(#{$color+'-s'});
+    $color-l: var(#{$color+'-l'});
+    @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+/// Recupération de la luminosité de la couleur en pourcentage
+///
+/// @access public
+/// @param {Color} $color - couleur à récupérer
+/// @return {Number}.
+@function lighting($color) {
+    @return lightness($color);
+} 
+
+/// Éclaircir légèrement une couleur
+///
+/// @access public
+/// @param {Color} $color - couleur à teinter
+/// @param {Number} $percentage - pourcentage de `$color` dans la couleur retournée
+/// @return {Color}.
+@function tint($color, $percentage) {
+    @return mix(#FFF, $color, $percentage);
+}
+
+/// Assombrir légèrement une couleur
+///
+/// @access public
+/// @param {Color} $color - couleur à teinter
+/// @param {Number} $percentage - pourcentage de `$color` dans la couleur retournée
+/// @return {Color}.
+@function shade($color, $percentage) {
+    @return mix(#000, $color, $percentage);
+}
+
+/// Fonction pour appeler les couleurs d'une map
+///
+/// @access public
+/// @param {Map} $colorsVariantes - map des couleurs
+/// @param {String} $nameColor - Nom de la couleur
+/// @param {String} $tint - Teinte de la couleur
+/// @return {Color}.
+@function setcolor($map, $nameColor, $tint) {
+    @return map-get($map, $nameColor, $tint);
+}

@@ -152,27 +152,81 @@ add_action( 'wp_enqueue_scripts', 'plac_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
+require get_theme_file_path( '/inc/custom-header.php' );
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+// require get_template_directory() . '/inc/template-tags.php';
+require get_theme_file_path( '/inc/template-tags.php' );
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+// require get_template_directory() . '/inc/template-functions.php';
+require get_theme_file_path( '/inc/template-functions.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
+require get_theme_file_path( '/inc/customizer.php' );
 
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+	// require get_template_directory() . '/inc/jetpack.php';
+    require get_theme_file_path( '/inc/jetpack.php' );
 }
 
+
+/**
+ * PARENT CSS
+ */
+
+// function plac_parent_styles() {
+//     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+//     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/global.css', array( 'parent-style' ) );
+// }
+
+// add_action( 'wp_enqueue_scripts', 'plac_parent_styles' );
+
+function enqueue_plac_assets() {
+    // Parent theme stylesheet
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    // Chemin du fichier manifest.json
+	$manifest_path = get_stylesheet_directory() . '/dist/.vite/manifest.json';
+
+	// Vérifie que le fichier manifest existe
+	if (file_exists($manifest_path)) {
+		// Charger le contenu du manifest
+		$manifest = json_decode(file_get_contents($manifest_path), true);
+		// Récupérer le chemin du fichier CSS généré dans le manifest
+		$css_file = $manifest['main.js']['css'][0] ?? null; // Prend le premier fichier CSS
+		$js_file = $manifest['main.js']['file'] ?? null;    // Prend le fichier JS associé
+
+        // var_dump($manifest);
+		// Enqueue le fichier CSS s'il est trouvé
+		if ($css_file) {
+			wp_enqueue_style( 'style-plac', get_stylesheet_directory_uri() . '/dist/' . $css_file, array(), null );
+		}
+
+		// Enqueue le fichier JS s'il est trouvé
+		if ($js_file) {
+			wp_enqueue_script('vite-js', get_stylesheet_directory_uri() . '/dist/' . $js_file, array(), null, true);
+        }
+
+        // Récupérer les fichiers de police du manifest
+        // if (isset($manifest['main.js']['assets'])) {
+        //     foreach ($manifest['main.js']['assets'] as $asset) {
+        //         if (preg_match('/\.(woff2?|ttf|eot|svg)$/', $asset)) {
+        //             wp_enqueue_style('font-' . basename($asset, '.' . pathinfo($asset, PATHINFO_EXTENSION)), get_stylesheet_directory_uri() . '/dist/' . $asset, array(), null);
+        //         }
+        //     }
+        // }
+	}
+}
+add_action('wp_enqueue_scripts', 'enqueue_plac_assets');

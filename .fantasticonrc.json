@@ -1,0 +1,13 @@
+{
+	"inputDir": "assets/svg",
+	"outputDir": "./assets/icons",
+	"fontTypes": ["ttf", "woff", "woff2"],
+	"assetTypes": ["css"],
+	"name": "icon",
+	"prefix": "icon",
+	"selector": ".icon",
+	"fontsUrl": "../fonts", 
+	"pathOptions": {
+		"css": "./dist/css/my-icon-font.css"
+	}
+}

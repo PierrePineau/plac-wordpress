@@ -1,0 +1,46 @@
+
+/// Mutiplication
+///
+/// @access public
+/// @param {Number} $value1 - Nombre à calculer
+/// @param {Number} $value2 - Nombre à calculer
+/// @return {Number}.
+@function multiply($value1, $value2) {
+    @return $value1 * $value2;
+}
+
+/// Addition
+///
+/// @access public
+/// @param {Number} $value1 - Nombre à calculer
+/// @param {Number} $value2 - Nombre à calculer
+/// @return {Number}.
+@function addition($value1, $value2) {
+    @return $value1 + $value2;
+}
+
+/// Soustraction
+///
+/// @access public
+/// @param {Number} $value1 - Nombre à calculer
+/// @param {Number} $value2 - Nombre à calculer
+/// @return {Number}.
+@function subtraction($value1, $value2) {
+    @return $value1 - $value2;
+}
+
+/// Division
+///
+/// @access public
+/// @param {Number} $value1 - Nombre à calculer
+/// @param {Number} $value2 - Nombre à calculer
+/// @return {Number}.
+@function division($value1, $value2) {
+    @return math.div($value1, $value2);
+}
+
+//Convertion hex to HSL
+@function hsl-str($color) {
+    @return unquote("hsl(#{math.div(hue($color), 1deg)}, #{saturation($color)}, #{lightness($color)})");
+}
+

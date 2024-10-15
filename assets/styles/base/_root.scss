@@ -1,0 +1,22 @@
+:root{
+    @each $mapColors, $nameMapColors in $colorsVariantes {
+        @each $nameColor, $color in $nameMapColors {
+            --#{$mapColors}-#{$nameColor}: #{$color};
+        }
+    }
+    --color-dark: #0A0A0A;
+    --color-light: #fafafb;
+    --color-gray: #F5F6FB;
+    --color-info: #3ABFF8;
+    --color-warning: #FBBD23;
+    --color-danger: #f44444;
+    --color-notice: #3ABFF8;
+    --color-success: #36D399;
+    --wp--preset--color--contrast: var(--color-dark);
+
+    // WORDPRESS
+    --wp--preset--font-family--body: "Satoshi", "Inter", sans-serif;
+    --wp--preset--font-family--heading: "Satoshi", "Cardo", sans-serif;
+    --wp--preset--font-family--system-sans-serif: sans-serif;   
+    --wp--preset--font-family--system-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}

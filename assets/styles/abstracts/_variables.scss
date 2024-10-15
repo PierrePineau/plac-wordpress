@@ -1,0 +1,136 @@
+$colors: (
+    primary: #295BFF,
+    secondary: #F5811A,
+    light: #737373,
+    info: #3ABFF8,
+    warning: #FBBD23,
+    danger: #f44444,
+    notice: #3ABFF8,
+    success: #36D399,
+);
+
+$primary: map-get($map: $colors, $key: primary);
+$secondary:  map-get($map: $colors, $key: secondary);
+$light:  map-get($map: $colors, $key: light);
+$info:  map-get($map: $colors, $key: info);
+$warning:  map-get($map: $colors, $key: warning);
+$danger:  map-get($map: $colors, $key: danger);
+$notice:  map-get($map: $colors, $key: notice);
+$success:  map-get($map: $colors, $key: success);
+
+$dark: var(--color-dark);
+// $light: var(--color-light);
+$colorsVariantes: (
+    color1:(
+        100: tint($primary, 80%),
+        200: tint($primary, 60%),
+        300: tint($primary, 40%),
+        400: tint($primary, 20%),
+        500: $primary,
+        600: shade($primary, 20%),
+        700: shade($primary, 40%),
+        800: shade($primary, 60%),
+        900: shade($primary, 80%),
+    ),
+    color2:(
+        100: tint($secondary, 80%),
+        200: tint($secondary, 60%),
+        300: tint($secondary, 40%),
+        400: tint($secondary, 20%),
+        500: $secondary,
+        600: shade($secondary, 20%),
+        700: shade($secondary, 40%),
+        800: shade($secondary, 60%),
+        900: shade($secondary, 80%),
+    ),
+    light:(
+        100: tint($light, 80%),
+        200: tint($light, 60%),
+        300: tint($light, 40%),
+        400: tint($light, 20%),
+        500: $light,
+        600: shade($light, 20%),
+        700: shade($light, 40%),
+        800: shade($light, 60%),
+        900: shade($light, 80%),
+    ),
+    info:(
+        100: tint($info, 80%),
+        200: tint($info, 60%),
+        300: tint($info, 40%),
+        400: tint($info, 20%),
+        500: $info,
+        600: shade($info, 20%),
+        700: shade($info, 40%),
+        800: shade($info, 60%),
+        900: shade($info, 80%),
+    ),
+    warning:(
+        100: tint($warning, 80%),
+        200: tint($warning, 60%),
+        300: tint($warning, 40%),
+        400: tint($warning, 20%),
+        500: $warning,
+        600: shade($warning, 20%),
+        700: shade($warning, 40%),
+        800: shade($warning, 60%),
+        900: shade($warning, 80%),
+    ),
+    danger:(
+        100: tint($danger, 80%),
+        200: tint($danger, 60%),
+        300: tint($danger, 40%),
+        400: tint($danger, 20%),
+        500: $danger,
+        600: shade($danger, 20%),
+        700: shade($danger, 40%),
+        800: shade($danger, 60%),
+        900: shade($danger, 80%),
+    ),
+    notice:(
+        100: tint($notice, 80%),
+        200: tint($notice, 60%),
+        300: tint($notice, 40%),
+        400: tint($notice, 20%),
+        500: $notice,
+        600: shade($notice, 20%),
+        700: shade($notice, 40%),
+        800: shade($notice, 60%),
+        900: shade($notice, 80%),
+    ),
+    success:(
+        100: tint($success, 80%),
+        200: tint($success, 60%),
+        300: tint($success, 40%),
+        400: tint($success, 20%),
+        500: $success,
+        600: shade($success, 20%),
+        700: shade($success, 40%),
+        800: shade($success, 60%),
+        900: shade($success, 80%),
+    ),
+);
+
+$primary: var(--color1-500);
+$secondary: var(--color2-500);
+
+$light-1: var(--light-100);
+$light-2: var(--light-200);
+$light-3: var(--light-300);
+$light-4: var(--light-400);
+$light: var(--light-500);
+$light-6: var(--light-600);
+$light-7: var(--light-700);
+$light-8: var(--light-800);
+$light-9: var(--light-900);
+
+$link_size : 1rem;
+$rounded : 5px;
+$font-base: 16px;
+$gap: 1rem;
+
+$warning: var(--color-warning);
+$danger: var(--color-danger);
+$success: var(--color-success);
+$info: var(--color-info);
+$notice: var(--color-notice);

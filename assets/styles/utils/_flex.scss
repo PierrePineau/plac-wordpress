@@ -1,0 +1,14 @@
+.flex{
+    &__col{
+        @extend %flexCol;
+        align-items: flex-start;
+        flex-grow: 1;
+    }
+    &__col--center{
+        @extend %flexColCenter;
+    }
+    &__row{
+        display: flex;
+        width: 100%;
+    }
+}

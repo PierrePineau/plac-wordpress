@@ -1,0 +1,42 @@
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.25rem;
+    gap: 1rem;
+}
+
+.btn{
+    &-primary{
+        background-color: var(--color-primary-900);
+        color: #fff;
+        border-color: var(--color-primary-900);
+    }
+    &-light{
+        background-color: var(--color-light-300);
+        color: var(--color-dark);
+        border-color: var(--color-light-300);
+    }
+
+    &-outline{
+
+        &-light{
+            background-color: transparent;
+            border-color: var(--color-light-300);
+        }
+
+        &-primary{
+            background-color: transparent;
+            color: var(--color-primary-900);
+        }
+
+        &-secondary{
+            background-color: transparent;
+            color: var(--color-secondary-500);
+        }
+    }
+    
+}

@@ -1,0 +1,1 @@
+import './assets/styles/global.scss'; // Importer le fichier SCSS pour que Vite le compile

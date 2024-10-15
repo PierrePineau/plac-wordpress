@@ -1,0 +1,12 @@
+.links{
+    &-white{
+        @extend .links;
+        color: white;
+        &:hover,&:focus,&.is-active{
+            color: white;
+        }
+    }
+}
+a{
+    color: inherit;
+}
