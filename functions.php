@@ -49,7 +49,10 @@ function plac_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'plac' ),
+			'menu-h' => esc_html__( 'Header', 'plac' ),
+            'menu-u' => esc_html__( 'Liens utiles', 'plac' ),
+            'menu-r' => esc_html__( 'Ressources', 'plac' ),
+            'menu-c' => esc_html__( 'Contact', 'plac' ),
 		)
 	);
 
@@ -228,5 +231,7 @@ function enqueue_plac_assets() {
         //     }
         // }
 	}
+    // On ajoute le script de Alpine js
+    wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_plac_assets');

@@ -1,0 +1,18 @@
+.main-navigation{
+    .menu{
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .page_item,
+    .menu-item{
+        a{
+            @extend .link;
+        }
+        &.current_page_item a{
+            color: var(--primary-500);
+        }
+    }
+}

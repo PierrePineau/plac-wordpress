@@ -13,6 +13,25 @@
 </main>
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+             <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-u',
+                    )
+                );
+
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-r',
+                    )
+                );
+
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-c',
+                    )
+                );
+                ?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'plac' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

@@ -21,7 +21,7 @@ $success:  map-get($map: $colors, $key: success);
 $dark: var(--color-dark);
 // $light: var(--color-light);
 $colorsVariantes: (
-    color1:(
+    primary:(
         100: tint($primary, 80%),
         200: tint($primary, 60%),
         300: tint($primary, 40%),
@@ -32,7 +32,7 @@ $colorsVariantes: (
         800: shade($primary, 60%),
         900: shade($primary, 80%),
     ),
-    color2:(
+    secondary:(
         100: tint($secondary, 80%),
         200: tint($secondary, 60%),
         300: tint($secondary, 40%),

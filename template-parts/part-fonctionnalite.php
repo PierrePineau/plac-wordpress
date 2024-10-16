@@ -1,0 +1,46 @@
+<section class="section section-features">
+    <div class="container items-center">
+            <p class="subtitle uppercase"><?php the_field('feature_subtitle'); ?></p>
+            <?php the_field('feature_title'); ?>
+            <p class="text-center text-light-400 max-w-screen-md"><?php the_field('feature_description'); ?></p>        
+        <?php
+        $args = array(
+            'post_type' => 'fonctionnalites', // Utilisez le slug de votre nouveau type de publication
+            'posts_per_page' => 5, // Nombre d'articles à afficher
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) : ?>
+            <ul class="features__list grid gap-8 md:grid-cols-12">
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <li class="features__item">
+                        <a href="<?= the_permalink(); ?>" class="feature">
+                            <article class="feature__article">
+                                <picture class="feature__thumbnail">
+                                    <source srcset="<?= wp_get_attachment_image_srcset(get_post_thumbnail_id()) ?>" />
+                                    <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id()) ?>" alt="<?= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>" class="img" />
+                                </picture>
+                                <div class="feature__content">
+                                    <h3><?php the_title(); ?></h3>
+                                    <div class="feature__description">
+                                        <?= the_excerpt(); ?>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        <?php
+            wp_reset_postdata(); // Toujours réinitialiser après une requête personnalisée
+        else :
+            echo '<p>Aucune fonctionnalités trouvé.</p>';
+        endif;
+        ?>
+
+        <div class="flex gap-4 justify-center mx-auto mt-8">
+            <a href="<?= the_field('feature_button_link'); ?>" class="btn btn-primary"><?= the_field('feature_button_text'); ?></a>
+        </div>
+    </div>
+</section>
