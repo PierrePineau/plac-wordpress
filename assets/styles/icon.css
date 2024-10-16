@@ -1,8 +1,8 @@
 @font-face {
     font-family: "icon";
-    src: url("./assets/icons/icon.ttf?83a51f4ef1b7b294e1eb509409e5236e") format("truetype"),
-url("./assets/icons/icon.woff?83a51f4ef1b7b294e1eb509409e5236e") format("woff"),
-url("./assets/icons/icon.woff2?83a51f4ef1b7b294e1eb509409e5236e") format("woff2");
+    src: url("../../assets/icons/icon.ttf?83a51f4ef1b7b294e1eb509409e5236e") format("truetype"),
+url("../../assets/icons/icon.woff?83a51f4ef1b7b294e1eb509409e5236e") format("woff"),
+url("../../assets/icons/icon.woff2?83a51f4ef1b7b294e1eb509409e5236e") format("woff2");
 }
 
 .icon:before {

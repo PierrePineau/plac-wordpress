@@ -1,0 +1,44 @@
+.input{
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    @apply font-semibold transition-all rounded-lg;
+}
+
+
+input.wpcf7-form-control{
+    &[type="text"],
+    &[type="email"],
+    &[type="tel"],
+    &[type="number"],
+    &[type="password"],
+    &[type="search"],
+    &[type="url"],
+    &[type="date"],
+    &[type="time"]{
+        @extend .input;
+    }
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    @extend .btn;
+    @extend .btn-secondary;
+}
+
+
+#livre-blanc .wpcf7-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    input[type="submit"]{
+        min-height: 50px;
+    }
+}

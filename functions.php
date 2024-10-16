@@ -52,7 +52,6 @@ function plac_setup() {
 			'menu-h' => esc_html__( 'Header', 'plac' ),
             'menu-u' => esc_html__( 'Liens utiles', 'plac' ),
             'menu-r' => esc_html__( 'Ressources', 'plac' ),
-            'menu-c' => esc_html__( 'Contact', 'plac' ),
 		)
 	);
 

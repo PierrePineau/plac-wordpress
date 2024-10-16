@@ -16,13 +16,13 @@
         $query = new WP_Query($args);
 
         if ($query->have_posts()) : ?>
-            <ul class="faq__list lg:w-2/3 lg:pl-8 flex flex-col gap-4 justify-end" x-data="{ openQuestion: null }">
+            <ul class="faq__list lg:w-2/3 lg:pl-8 xl:pl-20 flex flex-col justify-end" x-data="{ openQuestion: null }">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <li class="faq__item">
-                        <button @click="openQuestion === <?php the_ID(); ?> ? openQuestion = null : openQuestion = <?php the_ID(); ?>" class="faq__head">
+                    <li class="faq__item border-b-light-100 border-b-2">
+                        <button @click="openQuestion === <?php the_ID(); ?> ? openQuestion = null : openQuestion = <?php the_ID(); ?>" class="faq__head py-4">
                             <h3><?php the_title(); ?></h3>
                         </button>
-                        <div x-show="openQuestion === <?php the_ID(); ?>" class="faq__content" x-transition>
+                        <div x-show="openQuestion === <?php the_ID(); ?>" class="faq__content pb-4" x-transition.origin.top.left x-collapse>
                             <?php the_field('question_reponse'); ?>
                         </div>
                     </li>
@@ -32,6 +32,5 @@
             wp_reset_postdata(); // Toujours réinitialiser après une requête personnalisée
         endif;
         ?>
-
     </div>
 </section>
