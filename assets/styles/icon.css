@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "icon";
+    src: url("./assets/icons/icon.ttf?83a51f4ef1b7b294e1eb509409e5236e") format("truetype"),
+url("./assets/icons/icon.woff?83a51f4ef1b7b294e1eb509409e5236e") format("woff"),
+url("./assets/icons/icon.woff2?83a51f4ef1b7b294e1eb509409e5236e") format("woff2");
+}
+
+.icon:before {
+    font-family: icon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-house-solid:before {
+    content: "\f101";
+}
+.icon.icon-accessibility:before {
+    content: "\f102";
+}
+.icon.icon-Wallet-2:before {
+    content: "\f103";
+}
+.icon.icon-Laptop:before {
+    content: "\f104";
+}
+.icon.icon-Code:before {
+    content: "\f105";
+}
+.icon.icon-Clipboard:before {
+    content: "\f106";
+}
+.icon.icon-Chevrons-right:before {
+    content: "\f107";
+}
+.icon.icon-Chevron-up:before {
+    content: "\f108";
+}
+.icon.icon-Chevron-right:before {
+    content: "\f109";
+}
+.icon.icon-Chevron-right-square:before {
+    content: "\f10a";
+}
+.icon.icon-Chevron-right-circle:before {
+    content: "\f10b";
+}
+.icon.icon-Chevron-left:before {
+    content: "\f10c";
+}
+.icon.icon-Chevron-left-square:before {
+    content: "\f10d";
+}
+.icon.icon-Chevron-left-circle:before {
+    content: "\f10e";
+}
+.icon.icon-Chevron-down:before {
+    content: "\f10f";
+}
+.icon.icon-Check:before {
+    content: "\f110";
+}
+.icon.icon-Bar-chart-4:before {
+    content: "\f111";
+}
+.icon.icon-Badge-minus:before {
+    content: "\f112";
+}
+.icon.icon-Badge-alert:before {
+    content: "\f113";
+}
+.icon.icon-Arrow-up:before {
+    content: "\f114";
+}
+.icon.icon-Arrow-up-right:before {
+    content: "\f115";
+}
+.icon.icon-Arrow-right:before {
+    content: "\f116";
+}
+.icon.icon-Arrow-left:before {
+    content: "\f117";
+}
+.icon.icon-Arrow-down:before {
+    content: "\f118";
+}
+.icon.icon-Archive:before {
+    content: "\f119";
+}
+.icon.icon-App-window:before {
+    content: "\f11a";
+}
+.icon.icon-Align-right:before {
+    content: "\f11b";
+}
+.icon.icon-Align-justify:before {
+    content: "\f11c";
+}
+.icon.icon-Alert-triangle:before {
+    content: "\f11d";
+}
+.icon.icon-Alert-octagon:before {
+    content: "\f11e";
+}
+.icon.icon-Alert-circle:before {
+    content: "\f11f";
+}
+.icon.icon-Album:before {
+    content: "\f120";
+}
