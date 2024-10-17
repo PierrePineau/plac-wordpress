@@ -24,7 +24,10 @@ export default defineConfig({
         minify: true,
         manifest: true,
 		rollupOptions: {
-			input: "./main.js",
+			input: {
+                'main': "./main.js",
+                // 'app': "./app.js",
+            },
 			output: {
             }
 		},

@@ -1,0 +1,15 @@
+.splide{
+
+    .splide__pagination{
+        position: relative;
+        // margin-top: 1rem;
+    }
+
+    .splide__pagination__page{
+        background-color: var(--light-300);
+
+        &.is-active{
+            background-color: var(--primary-500);
+        }
+    }
+}

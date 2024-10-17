@@ -199,6 +199,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function enqueue_plac_assets() {
     // Parent theme stylesheet
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+    // On ajoute le script de Alpine js
+    wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
+
+    // On ajoute le script de Splide js
+    wp_enqueue_script('splidejs', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
+
+    // On ajoute le style de Splide js
+    wp_enqueue_style('splidecss', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null);
+    
     // Chemin du fichier manifest.json
 	$manifest_path = get_stylesheet_directory() . '/dist/.vite/manifest.json';
 
@@ -230,7 +240,6 @@ function enqueue_plac_assets() {
         //     }
         // }
 	}
-    // On ajoute le script de Alpine js
-    wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
+    
 }
 add_action('wp_enqueue_scripts', 'enqueue_plac_assets');

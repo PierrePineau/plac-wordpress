@@ -16,9 +16,9 @@
         $query = new WP_Query($args);
 
         if ($query->have_posts()) : ?>
-            <ul class="faq__list lg:w-2/3 lg:pl-8 xl:pl-20 flex flex-col justify-end" x-data="{ openQuestion: null }">
+            <ul class="faq__list w-full lg:w-2/3 lg:pl-8 xl:pl-20 flex flex-col justify-end" x-data="{ openQuestion: null }">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <li class="faq__item border-b-light-100 border-b-2">
+                    <li class="faq__item border-b-light-100 border-b-2 ">
                         <button @click="openQuestion === <?php the_ID(); ?> ? openQuestion = null : openQuestion = <?php the_ID(); ?>" class="faq__head py-4">
                             <h3><?php the_title(); ?></h3>
                         </button>
