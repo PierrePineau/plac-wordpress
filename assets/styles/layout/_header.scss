@@ -59,4 +59,10 @@
     z-index: 20;
     top: 0;
     background: white;
+
+    @apply shadow-transparent transition-all duration-300;
+
+    &.scrolled{
+        @apply shadow-md;
+    }
 }

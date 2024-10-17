@@ -22,7 +22,7 @@
                         <button @click="openQuestion === <?php the_ID(); ?> ? openQuestion = null : openQuestion = <?php the_ID(); ?>" class="faq__head py-4">
                             <h3><?php the_title(); ?></h3>
                         </button>
-                        <div x-show="openQuestion === <?php the_ID(); ?>" class="faq__content pb-4" x-transition.origin.top.left x-collapse>
+                        <div x-show="openQuestion === <?php the_ID(); ?>" class="faq__content pb-4" x-transition.origin.top.left>
                             <?php the_field('question_reponse'); ?>
                         </div>
                     </li>

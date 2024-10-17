@@ -1,10 +1,6 @@
-console.log('global.js loaded');
-
-
 const sliderFeature = document.querySelector('#slider-feature');
 
 if (sliderFeature) {
-    console.log('slider-feature');
     const slider = new Splide( sliderFeature, {
         // type       : 'loop',
         rewind     : true,
@@ -24,3 +20,13 @@ if (sliderFeature) {
 
     sliderFeature.__instance = slider;
 }
+
+const headerContainer = document.querySelector('.site-header');
+// On regearde si on est en haut de la page, si oui on ajoute une classe sinon
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+        headerContainer.classList.add('scrolled');
+    } else {
+        headerContainer.classList.remove('scrolled');
+    }
+});
