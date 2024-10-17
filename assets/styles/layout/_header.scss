@@ -4,6 +4,13 @@
         gap: 1rem;
         list-style: none;
         justify-content: center;
+        flex-direction: column;
+        padding: 2rem;
+
+        @media screen and (min-width: 768px){
+            flex-direction: row;
+            padding: 0;
+        }
     }
 
     .page_item,
@@ -15,4 +22,41 @@
             color: var(--primary-500);
         }
     }
+
+    .menu__container{
+        position: relative;
+
+        @media screen and (max-width: 768px){
+            position: absolute;
+            transition: all 0.2s ease-in-out;
+            background-color: white;
+            height: calc(102vh - 100%);
+            top: 100%;
+            width: 70%;
+            left: 0;
+            z-index: 10;
+            @apply shadow-lg;
+        }
+    }
+
+
+    @media screen and (max-width: 768px){
+        .menu__container{
+            transform: translateX(-100%);
+        }
+
+        &.open{
+            .menu__container{
+                transform: translateX(0);
+            }
+        }
+    }
+   
+}
+
+.site-header{
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    background: white;
 }

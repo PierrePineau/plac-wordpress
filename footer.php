@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center">
+        <div class="flex flex-col md:flex-row md:justify-between items-center">
             <p>© <?= date('Y'); ?> Plac. Tous droits réservés</p>
             <ul class="flex gap-2">
                 <li><a href="#" class="link link-light">Mentions légales</a></li>

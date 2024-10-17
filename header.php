@@ -24,7 +24,7 @@
 <?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'plac' ); ?></a>
 
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header relative z-20">
     <div class="container">
         <div class="flex items-center justify-between w-full py-4">
             <!-- #site-logo -->
@@ -33,22 +33,25 @@
                 the_custom_logo();
                 ?>
             </div>
-            <!-- #site-navigation -->
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'plac' ); ?></button>
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-h',
-                    )
-                );
-                ?>
-            </nav>
-
             <!-- #CTA -->
-            <div class="md:w-[200px] flex justify-end">
-                <a href="#" class="btn btn-primary">Essai gratuit</a>
+            <div class="md:w-[200px] md-order-1 flex justify-end flex-shrink-0">
+                <a href="#" class="btn btn-primary flex-shrink-0">Essai gratuit</a>
             </div>
+            
+            <!-- #site-navigation -->
+            <nav id="site-navigation" class="main-navigation" x-data="{ open: false }" :class="{ 'open': open }" @click.away="open = false">
+                <button class="menu-toggle btn" aria-controls="primary-menu" aria-expanded="false" @click="open = !open"><?php esc_html_e( 'Menu', 'plac' ); ?></button>
+                <div class="menu__container">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-h',
+                        )
+                    );
+                    ?>
+                </div>
+                
+            </nav>
         </div>
     </div>
 </header>
