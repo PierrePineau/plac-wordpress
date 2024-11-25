@@ -21,7 +21,8 @@ jobs:
       - name: Upload on OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.OVH_SERVER }}
+          server: ftp.cluster027.hosting.ovh.net
+          # server: ${{ secrets.OVH_SERVER }}
           username: ${{ secrets.OVH_USERNAME }}
           password: ${{ secrets.OVH_PASSWORD }}  # Ajoutez aussi ce secret dans GitHub
           local-dir: ./
