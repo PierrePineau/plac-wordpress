@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}  # Utilise le token ajouté
 
       # Étape 2 : Déployer le thème via FTP
-      - name: Deploy theme via FTP
+      - name: Upload on OVH
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.OVH_SERVER }}
@@ -25,3 +25,4 @@ jobs:
           password: ${{ secrets.OVH_PASSWORD }}  # Ajoutez aussi ce secret dans GitHub
           local-dir: ./
           server-dir: /wp-content/themes/plac/
+          dry-run: true
