@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name : Demo 
+        run: echo "${{ env.OVH_USERNAME }} or ${{ secrets.OVH_USERNAME }}"
       # Étape 1 : Checkout du code
       - name: Checkout code
         uses: actions/checkout@v3
