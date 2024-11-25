@@ -21,7 +21,7 @@ if (sliderFeatures) {
     sliderFeatures.__instance = slider;
 }
 
-const siteheaders = document.querySelector('.site-header');
+let siteheaders = document.querySelector('.site-header');
 // On regearde si on est en haut de la page, si oui on ajoute une classe sinon
 window.addEventListener('scroll', function() {
     if (window.scrollY > 0) {
