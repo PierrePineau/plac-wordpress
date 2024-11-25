@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/main-C5nsIAdk.js",
+    "name": "main",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-_GSJoeRE.css"
+    ]
+  }
+}
