@@ -24,7 +24,7 @@ jobs:
           server: ftp.cluster027.hosting.ovh.net
           # server: ${{ secrets.OVH_SERVER }}
           username: gestioq-site
-          password: ${{ secrets.OVH_PASSWORD }}  # Ajoutez aussi ce secret dans GitHub
+          password: ${{ prod.OVH_PASSWORD }}  # Ajoutez aussi ce secret dans GitHub
           local-dir: ./
           server-dir: /wp-content/themes/plac/
           dry-run: true
