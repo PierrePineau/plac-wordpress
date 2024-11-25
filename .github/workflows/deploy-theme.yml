@@ -1,0 +1,27 @@
+name: Deploy Theme on OVH
+
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Checkout du code
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_PAT }}  # Utilise le token ajouté
+
+      # Étape 2 : Déployer le thème via FTP
+      - name: Deploy theme via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.OVH_FTP }}
+          username: ${{ secrets.OVH_USERNAME }}
+          password: ${{ secrets.OVH_PASSWORD }}  # Ajoutez aussi ce secret dans GitHub
+          local-dir: ./your-theme-folder
+          server-dir: /path/to/wordpress/wp-content/themes/your-theme-folder/
