@@ -19,7 +19,7 @@ jobs:
 
       # Étape 2 : Déployer le thème via FTP
       - name: Upload on OVH
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.OVH_SERVER }}
           username: ${{ secrets.OVH_USERNAME }}
