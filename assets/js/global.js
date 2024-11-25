@@ -1,7 +1,7 @@
-const sliderFeature = document.querySelector('#slider-feature');
+const sliderFeatures = document.querySelector('#slider-feature');
 
-if (sliderFeature) {
-    const slider = new Splide( sliderFeature, {
+if (sliderFeatures) {
+    const slider = new Splide( sliderFeatures, {
         // type       : 'loop',
         rewind     : true,
         autoplay   : true,
@@ -18,7 +18,7 @@ if (sliderFeature) {
         }
     } ).mount();
 
-    sliderFeature.__instance = slider;
+    sliderFeatures.__instance = slider;
 }
 
 const headerContainer = document.querySelector('.site-header');

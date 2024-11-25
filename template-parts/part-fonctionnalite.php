@@ -28,7 +28,7 @@
                                             <div class="feature__description">
                                                 <?= the_excerpt(); ?>
                                             </div>
-                                            <span class="text-primary-300">En savoir plus</span>
+                                            <span class="text-primary-500">En savoir plus</span>
                                         </div>
                                     </article>
                                 </a>
