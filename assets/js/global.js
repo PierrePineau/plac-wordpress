@@ -9,10 +9,10 @@ window.addEventListener('scroll', function() {
 });
 
 
-const sliderFeatures = document.querySelector('#slider-feature');
+// const sliderFeatures = document.querySelector('#slider-feature');
 
-if (sliderFeatures) {
-    const slider = new Splide( sliderFeatures, {
+if (document.querySelector('#slider-feature')) {
+    const slider = new Splide('#slider-feature', {
         // type       : 'loop',
         rewind     : true,
         autoplay   : true,
@@ -29,5 +29,5 @@ if (sliderFeatures) {
         }
     } ).mount();
 
-    sliderFeatures.__instance = slider;
+    document.querySelector('#slider-feature').__instance = slider;
 }
