@@ -27,4 +27,3 @@ jobs:
           password: 7b72itYhRX4G2t # Ajoutez aussi ce secret dans GitHub
           local-dir: ./
           server-dir: /wp-content/themes/plac/
-          dry-run: true
