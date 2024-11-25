@@ -1,7 +1,6 @@
-
-let siteheaders = document.querySelector('.site-header');
 // On regearde si on est en haut de la page, si oui on ajoute une classe sinon
 window.addEventListener('scroll', function() {
+    let siteheaders = document.querySelector('.site-header');
     if (window.scrollY > 0) {
         siteheaders.classList.add('scrolled');
     } else {
