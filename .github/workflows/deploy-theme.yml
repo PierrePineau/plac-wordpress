@@ -13,8 +13,8 @@ jobs:
       # Étape 1 : Checkout du code
       - name: Checkout code
         uses: actions/checkout@v3
-        # with:
-        #   token: ${{ secrets.GITHUB_PAT }}  # Utilise le token ajouté
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}  # Utilise le token ajouté
 
       # Étape 2 : Déployer le thème via FTP
       - name: Deploy theme via FTP
