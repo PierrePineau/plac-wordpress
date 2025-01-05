@@ -10,28 +10,22 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header flex flex-col gap-4">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+            $post_type = get_post_type_object(get_post_type());
+            if ($post_type && !is_wp_error($post_type)) {
+                echo '<p class="subtitle uppercase text-center">' . esc_html($post_type->labels->name) . '</p>';
+            }
+			the_title( '<h1 class="entry-title heading text-center">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				plac_posted_on();
-				plac_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		endif;?>
 	</header><!-- .entry-header -->
 
-	<?php plac_post_thumbnail(); ?>
-
-	<div class="entry-content container py-4">
+    
+	<section class="entry-content container py-4">
+        <?php plac_post_thumbnail(); ?>
 		<?php
 		the_content(
 			sprintf(
@@ -55,7 +49,7 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</section><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php plac_entry_footer(); ?>

@@ -10,13 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <header class="entry-header flex flex-col gap-4 bg-primary-800 py-8 md:py-16">
+		<?php
+			the_title( '<h1 class="entry-title heading text-white text-center">', '</h1>' );
+		?>
+        <?php if ( has_excerpt() ) : ?>
+            <div class="entry-description text-white text-opacity-90">
+                <?php the_excerpt(); ?>
+            </div>
+        <?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php plac_post_thumbnail(); ?>
-
-	<div class="entry-content">
+	<?php 
+    // plac_post_thumbnail();
+     ?>
+	<div class="entry-content container py-4">
 		<?php
 		the_content();
 

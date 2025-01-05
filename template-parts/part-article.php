@@ -1,6 +1,5 @@
 <section class="section section-article">
     <div class="container">
-
         <div class="flex flex-col lg:grid lg:grid-cols-6 flex-wrap gap-4 items-center">
             <div class="flex flex-col gap-4 w-full lg:col-span-4">
                 <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
@@ -9,12 +8,22 @@
             </div>
 
             <?php
-            $args = array(
-                'post_type'      => 'post',    // Type de contenu : articles
-                'posts_per_page' => 3,         // Nombre d'articles à afficher
-                'orderby'        => 'date',    // Trier par date
-                'order'          => 'DESC',    // Du plus récent au plus ancien
-            );
+            if (get_post_type() == 'post') {
+                $args = array(
+                    'post_type'      => 'post',    // Type de contenu : articles
+                    'posts_per_page' => 3,         // Nombre d'articles à afficher
+                    'orderby'        => 'date',    // Trier par date
+                    'order'          => 'DESC',    // Du plus récent au plus ancien
+                    'post__not_in'   => array(get_the_ID()), // Exclure l'article actuel
+                );
+            } else {
+                $args = array(
+                    'post_type'      => 'post',    // Type de contenu : articles
+                    'posts_per_page' => 3,         // Nombre d'articles à afficher
+                    'orderby'        => 'date',    // Trier par date
+                    'order'          => 'DESC',    // Du plus récent au plus ancien
+                );
+            }
 
             $query = new WP_Query($args);
 

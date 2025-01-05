@@ -84,3 +84,8 @@
     }
     
 }
+
+.wp-block-button__link{
+    @apply btn;
+    @apply btn-primary;
+}

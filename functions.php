@@ -183,6 +183,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
     require get_theme_file_path( '/inc/jetpack.php' );
 }
 
+/**
+ * PARENT OVERRIDE TYPE TEMPLATE
+ */
+
+function override_page_template($template) {
+    if (is_page()) {
+        $template = get_stylesheet_directory() . '/single-page.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'override_page_template');
+
 
 /**
  * PARENT CSS

@@ -10,6 +10,7 @@
  */
 
 ?>
+<?php get_template_part('template-parts/part', 'try'); ?>
 </main>
 <footer class="site-footer">
     <div class="container">
@@ -18,6 +19,14 @@
             <div class="lg:w-[500px] flex flex-col gap-4">
                 <?= the_custom_logo(); ?>
                 <p>Améliorez la communication et la collaboration entre vos équipes avec notre application. </p>
+
+                <!-- #social -->
+                <ul class="flex gap-4 justify-center lg:justify-start w-full">
+                    <li><a href="#" class="icon icon-facebook" title="Facebook"></a></li>
+                    <li><a href="#" class="icon icon-twitter" title="Twitter"></a></li>
+                    <li><a href="#" class="icon icon-linkedin" title="LinkedIn"></a></li>
+                    <li><a href="#" class="icon icon-instagram" title="Instagram"></a></li>
+                </ul>
             </div>
 
             <!-- #menus -->
@@ -34,6 +43,17 @@
                 </div> 
 
                 <div>
+                    <p class="text-lg font-semibold text-dark">Fonctionnalités</p>
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-f',
+                        )
+                    );
+                    ?>
+                </div>
+
+                <div>
                     <p class="text-lg font-semibold text-dark">Ressources</p>
                     <?php
                     wp_nav_menu(
@@ -48,25 +68,29 @@
                     <p class="text-lg font-semibold text-dark">Contact</p>
                     <ul>
                         <li>
-                            <a href="#" class="link link-light">+33 7 64 24 54 87</a>
+                            <a href="#" class="link text-neutral-400">+33 7 64 24 54 87</a>
                         </li>
                         <li>
-                            <a href="#" class="link link-light">contact@plac.fr</a>
+                            <a href="#" class="link text-neutral-400">contact@plac.fr</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
-            <div class="lg:w-[200px]">
-
-            </div>
+        </div>
+        <!-- #newsletter -->
+        <div class="flex flex-col gap-4 justify-center lg:justify-start w-full">
+            <p class="text-lg font-semibold text-dark">Suivre nos dernières actualités</p>
+            <form action="#" method="post" class="flex gap-4 md:max-w-xs">
+                <input type="email" name="email" placeholder="Votre adresse email" class="input input-primary" />
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
         </div>
 
         <div class="flex flex-col md:flex-row md:justify-between items-center">
-            <p>© <?= date('Y'); ?> Plac. Tous droits réservés</p>
+            <p class="text-neutral-400">© <?= date('Y'); ?> Plac. Tous droits réservés</p>
             <ul class="flex gap-2">
-                <li><a href="#" class="link link-light">Mentions légales</a></li>
-                <li><a href="#" class="link link-light">Politique de confidentialité</a></li>
+                <li><a href="#" class="link text-neutral-400">Mentions légales</a></li>
+                <li><a href="#" class="link text-neutral-400">Politique de confidentialité</a></li>
             </ul>
         </div>
     </div><!-- .site-info -->

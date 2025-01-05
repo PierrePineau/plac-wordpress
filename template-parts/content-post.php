@@ -10,28 +10,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header flex flex-col gap-4 container">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+            echo '<div class="flex flex-wrap items-center gap-2 mx-center justify-center">';
+            $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+                echo '<p class="subtitle post-category text-center"><a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a></p>';
+                echo '<span>·</span>';
+            }
+            echo '<p class="post-date text-center">' . get_the_date( 'd/m/Y' ) . '</p>';
+            echo '</div>';
+			the_title( '<h1 class="entry-title heading text-center">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				plac_posted_on();
-				plac_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		endif;?>
 	</header><!-- .entry-header -->
 
-	<?php plac_post_thumbnail(); ?>
-
-	<div class="entry-content container py-4">
+	<section class="entry-content container py-4">
+        <?php plac_post_thumbnail(); ?>
 		<?php
 		the_content(
 			sprintf(
@@ -55,7 +52,7 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</section><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php plac_entry_footer(); ?>
