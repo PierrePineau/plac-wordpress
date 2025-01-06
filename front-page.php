@@ -31,6 +31,8 @@ get_header(); ?>
 <?php get_template_part('template-parts/part', 'fonctionnalite'); ?>
 <?php get_template_part('template-parts/part', 'article'); ?>
 <?php get_template_part('template-parts/part', 'question'); ?>
-<?php get_template_part('template-parts/part', 'form'); ?>
+<?php 
+// get_template_part('template-parts/part', 'form');
+?>
 
 <?php get_footer(); ?>
