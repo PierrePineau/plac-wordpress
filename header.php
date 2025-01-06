@@ -35,7 +35,7 @@
             </div>
             <!-- #CTA -->
             <div class="ml-auto md:ml-unset md:order-1 flex justify-end flex-shrink-0 self-end gap-4">
-                <a href="#" class="btn btn-outline"><i class="icon icon-log-in"></i> <span class="hidden md:inline">Se connecter</span></a>
+                <a href="#" class="btn btn-outline btn-light"><i class="icon icon-log-in"></i> <span class="hidden md:inline">Se connecter</span></a>
                 <a href="#" class="btn btn-primary"><i class="icon icon-arrow-right"></i> <span class="hidden md:inline">Créer un compte</span></a>
             </div>
             
