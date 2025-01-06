@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header flex flex-col gap-4 container">
+	<header class="entry-header flex flex-col gap-4 container  py-4">
 		<?php
 		if ( is_singular() ) :
             echo '<div class="flex flex-wrap items-center gap-2 mx-center justify-center">';

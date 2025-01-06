@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header flex flex-col gap-4">
+	<header class="entry-header flex flex-col gap-4 py-4">
 		<?php
 		if ( is_singular() ) :
             $post_type = get_post_type_object(get_post_type());
@@ -25,7 +25,9 @@
 
     
 	<section class="entry-content container py-4">
-        <?php plac_post_thumbnail(); ?>
+        <?php
+        // plac_post_thumbnail();
+        ?>
 		<?php
 		the_content(
 			sprintf(

@@ -14,7 +14,7 @@
 </main>
 <footer class="site-footer">
     <div class="container">
-        <div class="flex flex-col gap-4 justify-start items-start w-full lg:flex-row border-b-light-100 border-b-2 py-8 lg:py-12 lg:gap-8">
+        <div class="flex flex-col gap-4 justify-start items-start w-full lg:flex-row py-8 lg:gap-8">
             <!-- #site-logo -->
             <div class="lg:w-[500px] flex flex-col gap-4">
                 <?= the_custom_logo(); ?>
@@ -86,7 +86,7 @@
             </form>
         </div>
 
-        <div class="flex flex-col md:flex-row md:justify-between items-center">
+        <div class="flex flex-col md:flex-row md:justify-between items-center border-t-light-100 border-t-2 py-4">
             <p class="text-neutral-400">© <?= date('Y'); ?> Plac. Tous droits réservés</p>
             <ul class="flex gap-2">
                 <li><a href="#" class="link text-neutral-400">Mentions légales</a></li>
