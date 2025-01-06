@@ -28,7 +28,10 @@
 	</header><!-- .entry-header -->
 
 	<section class="entry-content container py-4">
-        <?php plac_post_thumbnail(); ?>
+        <picture class="thumbnail">
+            <source srcset="<?= wp_get_attachment_image_srcset(get_post_thumbnail_id()) ?>" />
+            <img src="<?= wp_get_attachment_image_url(get_post_thumbnail_id()) ?>" alt="<?= get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?>" class="img" />
+        </picture>
 		<?php
 		the_content(
 			sprintf(
