@@ -188,7 +188,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 
 function override_page_template($template) {
-    if (is_page()) {
+    if (is_page() && !is_front_page()) {
         $template = get_stylesheet_directory() . '/single-page.php';
     }
     return $template;
