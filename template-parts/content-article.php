@@ -1,27 +1,51 @@
 <section class="section section-article">
     <div class="container">
-        <div class="flex flex-col lg:grid lg:grid-cols-6 flex-wrap gap-4 items-center">
-            <div class="flex flex-col gap-4 w-full lg:col-span-4">
-                <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
-                <?php the_field('blog_title'); ?>
-                <p class="text-light-400 max-w-screen-md"><?php the_field('blog_description'); ?></p>    
+        <div class="flex flex-col gap-4 items-center">
+            <div class="flex flex-col gap-4 w-full md:flex-wrap">
+                <div class="flex flex-col gap-4">
+                    <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
+                    <?php the_field('blog_title'); ?>
+                </div>
+                
+                <p class="text-light-400"><?php the_field('blog_description'); ?></p>    
             </div>
 
             <?php
-            if (get_post_type() == 'post') {
+            // SI c'est la page home ou une page de catégorie je voudrais afficher les 9 derniers articles
+            // Si c'est un post ou si c'est une page de type article je voudrais afficher les 3 derniers articles
+            // Si c'est la page home ou une page de catégorie je voudrais afficher les categories disponibles
+            if (is_home() || is_category()) {
+                // Afficher les catégories
+                $categories = get_categories();
+                if (!empty($categories)) {
+                    echo '<ul class="categories-list">';
+                    foreach ($categories as $category) {
+                        echo '<li class="category-item">';
+                        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                        echo '</li>';
+                    }
+                    echo '</ul>';
+                }
+            }
+
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            if (is_category()) {
                 $args = array(
                     'post_type'      => 'post',    // Type de contenu : articles
-                    'posts_per_page' => 3,         // Nombre d'articles à afficher
+                    'posts_per_page' => 9,         // Nombre d'articles à afficher
                     'orderby'        => 'date',    // Trier par date
                     'order'          => 'DESC',    // Du plus récent au plus ancien
-                    'post__not_in'   => array(get_the_ID()), // Exclure l'article actuel
+                    'paged'          => $paged,    // Pagination
                 );
-            } else {
+            }  else if (
+                is_home()
+            ) {
                 $args = array(
                     'post_type'      => 'post',    // Type de contenu : articles
-                    'posts_per_page' => 3,         // Nombre d'articles à afficher
+                    'posts_per_page' => 9,         // Nombre d'articles à afficher
                     'orderby'        => 'date',    // Trier par date
                     'order'          => 'DESC',    // Du plus récent au plus ancien
+                    'paged'          => $paged,    // Pagination
                 );
             }
 
@@ -64,9 +88,6 @@
                 echo '<p>Aucun article trouvé.</p>';
             endif;
             ?>
-            <div class="flex justify-center lg:justify-end lg:items-end lg:col-span-2 self-end">
-                <a href="<?= the_field('blog_link'); ?>" class="btn btn-primary flex-shrink-0"><i data-lucide="arrow-right"></i> Tous les articles</a>
-            </div>
         </div>
     </div>
 </section>

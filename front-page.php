@@ -13,11 +13,11 @@ get_header(); ?>
             <p class="text-center text-light-400 max-w-screen-md"><?php the_field('hero_description'); ?></p>
 
             <div class="flex gap-4 justify-center mx-auto">
-                <a href="#" class="btn btn-primary">Nos fonctionnalités</a>
-                <a href="#" class="btn btn-light btn-outline">Nos tarifs</a>
+                <a href="https://app.gestion-plac.fr/" class="btn btn-primary"><i data-lucide="rocket"></i>Essayer gratuitement</a>
+                <a href="#" class="btn btn-light btn-outline"><i data-lucide="screen-share"></i>Nos tarifs</a>
             </div>  
         </div>
-        <picture class="picture shadow-md">
+        <picture class="picture">
             <?php 
             $thumbnail_id = get_field('hero_thumbnail');
             $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 

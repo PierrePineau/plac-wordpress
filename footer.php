@@ -22,10 +22,8 @@
 
                 <!-- #social -->
                 <ul class="flex gap-4 justify-center lg:justify-start w-full">
-                    <li><a href="#" class="icon icon-facebook" title="Facebook"></a></li>
-                    <li><a href="#" class="icon icon-twitter" title="Twitter"></a></li>
-                    <li><a href="#" class="icon icon-linkedin" title="LinkedIn"></a></li>
-                    <li><a href="#" class="icon icon-instagram" title="Instagram"></a></li>
+                    <li><a href="#" class="" title="Instagram"></a><i data-lucide="instagram"></i></li>
+                    <li><a href="#" class="" title="LinkedIn"><i data-lucide="linkedin"></i></a></li>
                 </ul>
             </div>
 
@@ -48,7 +46,7 @@
                     wp_nav_menu(
                         array(
                             'theme_location' => 'menu-f',
-                        )
+                        ),
                     );
                     ?>
                 </div>
@@ -59,7 +57,8 @@
                     wp_nav_menu(
                         array(
                             'theme_location' => 'menu-r',
-                        )
+                        ),
+                        'footer'
                     );
                     ?>
                 </div>
@@ -68,10 +67,10 @@
                     <p class="text-lg font-semibold text-dark">Contact</p>
                     <ul>
                         <li>
-                            <a href="#" class="link text-neutral-400">+33 7 64 24 54 87</a>
+                            <a href="#" class="">+33 7 64 24 54 87</a>
                         </li>
                         <li>
-                            <a href="#" class="link text-neutral-400">contact@plac.fr</a>
+                            <a href="#" class="">contact@plac.fr</a>
                         </li>
                     </ul>
                 </div>
@@ -89,11 +88,14 @@
         <div class="flex flex-col md:flex-row md:justify-between items-center border-t-light-100 border-t-2 py-4">
             <p class="text-neutral-400">© <?= date('Y'); ?> Plac. Tous droits réservés</p>
             <ul class="flex gap-2">
-                <li><a href="#" class="link text-neutral-400">Mentions légales</a></li>
-                <li><a href="#" class="link text-neutral-400">Politique de confidentialité</a></li>
+                <li><a href="/mentions-legales" class="link text-neutral-400">Mentions légales</a></li>
+                <li><a href="/politique-de-confidentialite" class="link text-neutral-400">Politique de confidentialité</a></li>
             </ul>
         </div>
     </div><!-- .site-info -->
+    <script>
+        lucide.createIcons();
+    </script>
 </footer>
 
 <?php wp_footer(); ?>

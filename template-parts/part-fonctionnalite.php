@@ -28,7 +28,7 @@
                                             <div class="feature__description">
                                                 <?= the_excerpt(); ?>
                                             </div>
-                                            <span class="text-primary-500"><i class="icon icon-arrow-external"></i> En savoir plus</span>
+                                            <span class="text-primary-500 inline-flex gap-2 items-center"><i data-lucide="arrow-up-right"></i> En savoir plus</span>
                                         </div>
                                     </article>
                                 </a>
@@ -43,9 +43,8 @@
             echo '<p>Aucune fonctionnalités trouvé.</p>';
         endif;
         ?>
-
         <div class="flex gap-4 justify-center mx-auto mt-8">
-            <a href="<?= the_field('feature_button_link'); ?>" class="btn btn-primary"><?= the_field('feature_button_text'); ?></a>
+            <a href="<?= the_field('feature_button_link'); ?>" class="btn btn-primary"><i data-lucide="bring-to-front"></i><?= the_field('feature_button_text'); ?></a>
         </div>
     </div>
 </section>

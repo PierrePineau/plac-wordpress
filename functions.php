@@ -191,10 +191,13 @@ function override_page_template($template) {
     if (is_page() && !is_front_page()) {
         $template = get_stylesheet_directory() . '/single-page.php';
     }
+    if (is_home()) {
+        $template = get_stylesheet_directory() . '/home.php';
+    }
     return $template;
+
 }
 add_filter('template_include', 'override_page_template');
-
 
 /**
  * PARENT CSS
@@ -212,6 +215,9 @@ function enqueue_plac_assets() {
     // Parent theme stylesheet
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
+    // Icons Lucide
+    wp_enqueue_script('lucidecss', 'https://unpkg.com/lucide@latest', array(), null);
+    
     // On ajoute le script de Alpine js
     wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
 
