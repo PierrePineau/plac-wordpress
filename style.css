@@ -224,6 +224,35 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	z-index: 100000;
 }
 
+.custom-submit-button {
+    background-color: #1E3A8A; /* Bleu foncé */
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-submit-button:hover {
+    background-color: #162D65; /* Bleu encore plus foncé */
+    transform: scale(1.05);
+}
+
+.custom-submit-button:active {
+    background-color: #0F1E42;
+    transform: scale(0.95);
+}
+
+.custom-submit-button:focus {
+    outline: 2px solid #3B82F6; /* Bleu clair */
+    outline-offset: 2px;
+}
+
+
+
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;

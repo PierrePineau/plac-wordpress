@@ -261,3 +261,4 @@ function enqueue_plac_assets() {
     
 }
 add_action('wp_enqueue_scripts', 'enqueue_plac_assets');
+  
