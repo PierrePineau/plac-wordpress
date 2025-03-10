@@ -17,7 +17,8 @@
                     <ul class="splide__list features__list md:grid md:gap-8 md:grid-cols-12 !pb-8">
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
                             <li class="features__item splide__slide p-4 md:p-0">
-                                <a href="<?= the_permalink(); ?>" class="feature max-w-md lg:max-w-none mx-auto">
+                                <a href="https://app.gestion-plac.fr" class="feature max-w-md lg:max-w-none mx-auto">
+                                <!-- <a href="<?= the_permalink(); ?>" class="feature max-w-md lg:max-w-none mx-auto"> -->
                                     <article class="feature__article">
                                         <picture class="feature__thumbnail">
                                             <source srcset="<?= wp_get_attachment_image_srcset(get_post_thumbnail_id()) ?>" />

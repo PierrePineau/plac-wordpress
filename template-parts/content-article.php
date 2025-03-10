@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-4 w-full md:flex-wrap">
         <div class="flex flex-col gap-4">
           <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
-          <?php the_field('blog_title'); ?>
+          <p><?php the_field('blog_title'); ?></p>
         </div>
         <p class="text-light-400"><?php the_field('blog_description'); ?></p>
       </div>

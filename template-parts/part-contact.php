@@ -18,6 +18,7 @@ $form_id = get_field('contact_form_id');
       <h2 class="text-3xl font-bold mb-4"><?php echo esc_html($left_title); ?></h2>
       <p class="mb-6"><?php echo wp_kses_post($left_subtitle); ?></p>
       <p><?php echo esc_html($email_text); ?></p>
+      <p class="mt-2">Par téléphone</p>
       <p class="mt-2"><?php echo esc_html($phone_text); ?></p>
       <div class="flex space-x-4 mt-4"></div>
     </div>

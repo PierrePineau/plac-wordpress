@@ -187,15 +187,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * PARENT OVERRIDE TYPE TEMPLATE
  */
 
-function override_page_template($template) {
+ function override_page_template($template) {
     if (is_page() && !is_front_page()) {
         $template = get_stylesheet_directory() . '/single-page.php';
     }
     if (is_home()) {
         $template = get_stylesheet_directory() . '/home.php';
     }
+    if (is_page('contact')) { // Vérifie si la page actuelle a le slug "contact"
+        $template = get_stylesheet_directory() . '/page-contact.php';
+    }
     return $template;
-
 }
 add_filter('template_include', 'override_page_template');
 

@@ -1,5 +1,4 @@
 <?php
-/* Template Name: Page Contact Deux Sections Distinctes */
 get_header();
 ?>
 <div class="flex flex-col md:flex-row min-h-screen">
