@@ -56,76 +56,74 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Navigation
 --------------------------------------------- */
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
-	margin: 0 0 1.5em;
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
 }
 
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-	display: flex;
+  display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	flex: 1 0 50%;
+  flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+  text-align: end;
+  flex: 1 0 50%;
 }
 
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
-	display: block;
+  display: block;
 }
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 /* Comments
 --------------------------------------------- */
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 /* Widgets
 --------------------------------------------- */
 .widget {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .widget select {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* Media
@@ -133,36 +131,36 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+  display: inline-block;
 }
 
 /* Captions
 --------------------------------------------- */
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+  margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-	text-align: center;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -175,12 +173,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	display: none;
+  display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
-	display: block;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -192,71 +190,88 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }
 
 .custom-submit-button {
-    background-color: #1E3A8A; /* Bleu foncé */
-    color: white;
-    font-weight: bold;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #1e3a8a; /* Bleu foncé */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .custom-submit-button:hover {
-    background-color: #162D65; /* Bleu encore plus foncé */
-    transform: scale(1.05);
+  background-color: #162d65; /* Bleu encore plus foncé */
+  transform: scale(1.05);
 }
 
 .custom-submit-button:active {
-    background-color: #0F1E42;
-    transform: scale(0.95);
+  background-color: #0f1e42;
+  transform: scale(0.95);
 }
 
 .custom-submit-button:focus {
-    outline: 2px solid #3B82F6; /* Bleu clair */
-    outline-offset: 2px;
+  outline: 2px solid #3b82f6; /* Bleu clair */
+  outline-offset: 2px;
 }
-
-
 
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
-	outline: 0;
+  outline: 0;
 }
 
 /* Alignments
 --------------------------------------------- */
+
+@layer components {
+  .form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md 
+				 text-sm text-gray-700
+				 focus:outline-none focus:border-blue-500;
+  }
+  .form-textarea {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md
+				 text-sm text-gray-700 h-32
+				 focus:outline-none focus:border-blue-500;
+  }
+  .form-submit {
+    @apply inline-flex items-center justify-center 
+				 px-6 py-3 bg-blue-600 text-white text-sm font-semibold
+				 rounded-md hover:bg-blue-700 transition-colors 
+				 duration-300 ease-in-out;
+  }
+}

@@ -191,7 +191,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
     if (is_page() && !is_front_page()) {
         $template = get_stylesheet_directory() . '/single-page.php';
     }
-    if (is_home()) {
+    if (is_home() || is_page('blog')) {
         $template = get_stylesheet_directory() . '/home.php';
     }
     if (is_page('contact')) { // Vérifie si la page actuelle a le slug "contact"
@@ -263,4 +263,5 @@ function enqueue_plac_assets() {
     
 }
 add_action('wp_enqueue_scripts', 'enqueue_plac_assets');
-  
+add_filter('wpcf7_autop', '__return_false');
+
