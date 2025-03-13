@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-4 w-full md:flex-wrap">
         <div class="flex flex-col gap-4">
           <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
-          <p><?php the_field('blog_title'); ?></p>
+          <h1><?php the_field('blog_title'); ?></h1>
         </div>
         <p class="text-light-400"><?php the_field('blog_description'); ?></p>
       </div>
@@ -75,7 +75,7 @@
         $query = new WP_Query($args);
         if ( $query->have_posts() ) :
       ?>
-      <ul class="grid lg:grid-cols-3 gap-4 w-full lg:col-span-6 lg:order-1 max-w-md lg:max-w-none">
+      <ul class="grid lg:grid-cols-3 gap-4 w-full lg:col-span-6 max-w-md lg:max-w-none">
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <li>
           <article class="article__article">
@@ -100,32 +100,30 @@
           </article>
         </li>
         <?php endwhile; ?>
-        <li></li>
-        <div class="pagination flex flex-row justify-center mt-8">
-          <?php 
-            if ( $query->max_num_pages > 1 ) :
-              $big = 999999999;
-              echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                'format' => '?paged=%#%',
-                'current' => max( 1, $paged ),
-                'total' => $query->max_num_pages,
-                'prev_text' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">« Précédent</span>',
-                'next_text' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">Suivant »</span>',
-                'before_page_number' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">',
-                'after_page_number' => '</span>'
-              ) );
-            endif;
-          ?>
-        </div>
+      </ul>
+      <div class="pagination flex flex-row justify-center mt-8 lg:order-2">
         <?php 
-          wp_reset_postdata();
-          else :
-            echo '<p>Aucun article trouvé.</p>';
+          if ( $query->max_num_pages > 1 ) :
+            $big = 999999999;
+            echo paginate_links( array(
+              'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+              'format' => '?page=%#%',
+              'current' => max( 1, $paged ),
+              'total' => $query->max_num_pages,
+              'prev_text' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">« Précédent</span>',
+              'next_text' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">Suivant »</span>',
+              'before_page_number' => '<span class="px-4 py-2 mx-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">',
+              'after_page_number' => '</span>'
+            ) );
           endif;
         ?>
-      </ul>
-      
+      </div>
+      <?php 
+        wp_reset_postdata();
+        else :
+          echo '<p>Aucun article trouvé.</p>';
+        endif;
+      ?>
     </div>
   </div>
 </section>
