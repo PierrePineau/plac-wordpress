@@ -64,6 +64,12 @@ input.wpcf7-form-control {
   padding: 0;
 }
 
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .wpcf7-submit {
   position: relative;
   display: inline-flex;

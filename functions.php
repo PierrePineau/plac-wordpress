@@ -263,20 +263,5 @@ function enqueue_plac_assets() {
     
 }
 add_action('wp_enqueue_scripts', 'enqueue_plac_assets');
-add_filter('wpcf7_autop', '__return_false');
-
-function custom_query_vars($vars) {
-	$vars[] = 'page';
-	return $vars;
-  }
-  add_filter('query_vars', 'custom_query_vars');
-  
-  function map_page_to_paged($query_vars) {
-	if (isset($query_vars['page']) && !isset($query_vars['paged'])) {
-	  $query_vars['paged'] = $query_vars['page'];
-	}
-	return $query_vars;
-  }
-  add_filter('request', 'map_page_to_paged');
-  
+add_filter('wpcf7_autop_or_not', '__return_false');
 

@@ -4,9 +4,9 @@
       <div class="flex flex-col gap-4 w-full md:flex-wrap">
         <div class="flex flex-col gap-4">
           <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
-          <h1><?php the_field('blog_title'); ?></h1>
+          <h1>Nos derniers articles</h1>
         </div>
-        <p class="text-light-400"><?php the_field('blog_description'); ?></p>
+        <p class="text-light-400">Retrouvez toutes nos actualités, ainsi que des conseils sur notre application. </p>
       </div>
       <?php if ( is_home() || is_category() ) : ?>
       <div class="flex items-start justify-start">
