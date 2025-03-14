@@ -9,39 +9,40 @@
         <p class="text-light-400">Retrouvez toutes nos actualités, ainsi que des conseils sur notre application. </p>
       </div>
       <?php if ( is_home() || is_category() ) : ?>
-      <div class="flex items-start justify-start">
-        <ul class="flex list-none m-0 p-0 border-b border-[#a3a3a3]">
-          <?php 
-            $is_all_active = !is_category();
-            $active_classes_all = $is_all_active ? ' text-[#0a0a0a] border-b-[#0a0a0a] font-bold' : ' hover:text-[#0a0a0a] hover:border-b-[#0a0a0a]';
-            $all_posts_link = esc_url( home_url( '/blog' ) );
-          ?>
-          <li class="inline-block">
-            <a class="inline-block py-2 px-3 text-[#a3a3a3] no-underline border-b-2 border-transparent transition-colors duration-200 ease-in-out<?php echo $active_classes_all; ?>" href="<?php echo $all_posts_link; ?>">Tout voir</a>
-          </li>
-          <?php 
-            $categories = get_categories();
-            if ( !empty( $categories ) ) :
-              $current_category_id = 0;
-              if ( is_category() ) :
-                $current_category = get_queried_object();
-                if ( isset( $current_category->term_id ) ) :
-                  $current_category_id = $current_category->term_id;
-                endif;
-              endif;
-              foreach ( $categories as $category ) :
-                $is_active = ( is_category() && $category->term_id == $current_category_id );
-                $active_classes = $is_active ? ' text-[#0a0a0a] border-b-[#0a0a0a] font-bold' : ' hover:text-[#0a0a0a] hover:border-b-[#0a0a0a]';
-          ?>
-          <li class="inline-block">
-            <a class="inline-block py-2 px-3 text-[#a3a3a3] no-underline border-b-2 border-transparent transition-colors duration-200 ease-in-out<?php echo $active_classes; ?>" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>">
-              <?php echo esc_html( $category->name ); ?>
-            </a>
-          </li>
-          <?php endforeach; endif; ?>
-        </ul>
-      </div>
-      <?php endif; ?>
+<div class="w-full flex items-start justify-start">
+  <ul class="flex list-none m-0 p-0 border-b border-[#a3a3a3]">
+    <?php 
+      $is_all_active = !is_category();
+      $active_classes_all = $is_all_active ? ' text-[#0a0a0a] border-b-[#0a0a0a] font-bold' : ' hover:text-[#0a0a0a] hover:border-b-[#0a0a0a]';
+      $all_posts_link = esc_url( home_url( '/blog' ) );
+    ?>
+    <li class="inline-block">
+      <a class="inline-block py-2 px-3 text-[#a3a3a3] no-underline border-b-2 border-transparent transition-colors duration-200 ease-in-out<?php echo $active_classes_all; ?>" href="<?php echo $all_posts_link; ?>">Tout voir</a>
+    </li>
+    <?php 
+      $categories = get_categories();
+      if ( !empty( $categories ) ) :
+        $current_category_id = 0;
+        if ( is_category() ) :
+          $current_category = get_queried_object();
+          if ( isset( $current_category->term_id ) ) :
+            $current_category_id = $current_category->term_id;
+          endif;
+        endif;
+        foreach ( $categories as $category ) :
+          $is_active = ( is_category() && $category->term_id == $current_category_id );
+          $active_classes = $is_active ? ' text-[#0a0a0a] border-b-[#0a0a0a] font-bold' : ' hover:text-[#0a0a0a] hover:border-b-[#0a0a0a]';
+    ?>
+    <li class="inline-block">
+      <a class="inline-block py-2 px-3 text-[#a3a3a3] no-underline border-b-2 border-transparent transition-colors duration-200 ease-in-out<?php echo $active_classes; ?>" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>">
+        <?php echo esc_html( $category->name ); ?>
+      </a>
+    </li>
+    <?php endforeach; endif; ?>
+  </ul>
+</div>
+<?php endif; ?>
+
 
       <?php 
         $paged = (get_query_var('paged')) ? get_query_var('paged') : ((get_query_var('page')) ? get_query_var('page') : 1);
