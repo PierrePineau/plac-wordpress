@@ -94,8 +94,13 @@
         </div>
     </div><!-- .site-info -->
     <script>
-        lucide.createIcons();
+        window.addEventListener("load", function(){
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+        });
     </script>
+
 </footer>
 
 <?php wp_footer(); ?>
