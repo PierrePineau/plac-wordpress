@@ -120,7 +120,6 @@ add_filter( 'template_include', 'override_page_template' );
 function enqueue_plac_assets() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_script('lucide', 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js', array(), null, true);
-	wp_add_inline_script('lucide', 'window.addEventListener("load", function(){ window.lucide.replace(); });');
 	wp_add_inline_script('lucide', 'window.addEventListener("load", function(){ window.lucide.createIcons(); });');
 
 	wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
