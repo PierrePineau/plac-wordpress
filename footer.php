@@ -87,6 +87,7 @@
             <ul class="flex gap-2">
                 <li><a href="/mentions-legales" class="link text-neutral-400">Mentions légales</a></li>
                 <li><a href="/politique-de-confidentialite" class="link text-neutral-400">Politique de confidentialité</a></li>
+                <li><a href="/conditions-generales" class="link text-neutral-400">Conditions générales</a></li>
             </ul>
         </div>
     </div><!-- .site-info -->
