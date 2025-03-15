@@ -22,8 +22,8 @@
 
                 <!-- #social -->
                 <ul class="flex gap-4 justify-center lg:justify-start w-full">
-                    <li><a href="#" class="" title="Instagram"></a><i data-lucide="instagram"></i></li>
-                    <li><a href="#" class="" title="LinkedIn"><i data-lucide="linkedin"></i></a></li>
+                    <li><a href="https://www.facebook.com/people/PLAC-Gestion/61569470524277" class="" title="Facebook"></a><i data-lucide="facebook"></i></li>
+                    <li><a href="https://www.linkedin.com/company/plac-gestion" class="" title="LinkedIn"><i data-lucide="linkedin"></i></a></li>
                 </ul>
             </div>
 
