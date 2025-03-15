@@ -79,10 +79,7 @@
         <!-- #newsletter -->
         <div class="flex flex-col gap-4 justify-center lg:justify-start w-full">
             <p class="text-lg font-semibold text-dark">Suivre nos dernières actualités</p>
-            <form action="#" method="post" class="flex gap-4 md:max-w-xs">
-                <input type="email" name="email" placeholder="Votre adresse email" class="input input-primary" />
-                <button type="submit" class="btn btn-primary">S'inscrire</button>
-            </form>
+            <?= do_shortcode('[contact-form-7 id="56fb6e8" title="Newsletter"]'); ?>
         </div>
 
         <div class="flex flex-col md:flex-row md:justify-between items-center border-t-light-100 border-t-2 py-4">
