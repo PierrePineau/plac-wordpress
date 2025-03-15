@@ -4,9 +4,11 @@
       <div class="flex flex-col gap-4 w-full md:flex-wrap">
         <div class="flex flex-col gap-4">
           <p class="subtitle uppercase"><?php the_field('blog_subtitle'); ?></p>
-          <h1>Nos derniers articles</h1>
+          <div class="flex flex-row justify-between">
+            <h1 class="self-stretch justify-start text-neutral-950 text-5xl font-bold font-['Satoshi']">Nos derniers articles</h1>
+            <p class="w-[478px] justify-start text-neutral-400 text-base font-medium font-['Satoshi']">Retrouvez toutes nos actualités, ainsi que des conseils sur notre application. </p>
+          </div>
         </div>
-        <p class="text-light-400">Retrouvez toutes nos actualités, ainsi que des conseils sur notre application. </p>
       </div>
       <?php if ( is_home() || is_category() ) : ?>
 <div class="w-full flex items-start justify-start">

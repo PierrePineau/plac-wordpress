@@ -42,6 +42,8 @@ get_header();
     </div>
   </section>
   <section class="w-full md:w-1/2 bg-white text-black py-12 flex">
+  <div class="flex flex-col gap-60 container mx-auto px-6 md:px-10">
+      <div class="mt-4 md:mt-8 flex flex-col space-y-6 md:text-left gap-11">
     <div class="container mx-auto px-6 md:px-10">
       <h1 class="text-neutral-950 text-2xl font-bold font-['Satoshi']"><?= the_field('titre_formulaire'); ?></h1>
       <p class="text-neutral-400 text-base font-medium font-['Satoshi']"><?= the_field('description_formulaire'); ?> <span class="text-[#295bff] text-base font-bold font-['Satoshi']"><?= the_field('mail'); ?></span></p>
@@ -49,6 +51,8 @@ get_header();
         <?= do_shortcode('[contact-form-7 id="c33a64b" title="Formulaire de contact"]'); ?>
       </div>
     </div>
+</div>
+</div>
   </section>
 </div>
 <?php get_footer(); ?>
