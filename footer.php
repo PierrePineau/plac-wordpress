@@ -77,7 +77,7 @@
             </nav>
         </div>
         <!-- #newsletter -->
-        <div class="flex flex-col gap-4 justify-center lg:justify-start w-full">
+        <div class="flex flex-col gap-3 justify-start lg:justify-start w-full">
             <p class="text-lg font-semibold text-dark">Suivre nos dernières actualités</p>
             <?= do_shortcode('[contact-form-7 id="56fb6e8" title="Newsletter"]'); ?>
         </div>
