@@ -119,12 +119,11 @@ add_filter( 'template_include', 'override_page_template' );
 
 function enqueue_plac_assets() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_script('lucide', 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js', array(), null, true);
-	wp_add_inline_script('lucide', 'window.addEventListener("load", function(){ window.lucide.createIcons(); });');
-
-	wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs', array(), null, true);
-	wp_enqueue_script('splidejs', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
-	wp_enqueue_style('splidecss', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null);
+	wp_enqueue_script( 'lucide', 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js', array(), null, true );
+	wp_add_inline_script( 'lucide', 'window.addEventListener("load", function(){ window.lucide.createIcons(); });' );
+	wp_enqueue_script( 'alpinejs', 'https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js', array(), null, true );
+	wp_enqueue_script( 'splidejs', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true );
+	wp_enqueue_style( 'splidecss', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null );
 	$manifest_path = get_stylesheet_directory() . '/dist/.vite/manifest.json';
 	if ( file_exists( $manifest_path ) ) {
 		$manifest = json_decode( file_get_contents( $manifest_path ), true );
@@ -134,7 +133,7 @@ function enqueue_plac_assets() {
 			wp_enqueue_style( 'style-plac', get_stylesheet_directory_uri() . '/dist/' . $css_file, array(), null );
 		}
 		if ( $js_file ) {
-			wp_enqueue_script('vite-js', get_stylesheet_directory_uri() . '/dist/' . $js_file, array(), null, true);
+			wp_enqueue_script( 'vite-js', get_stylesheet_directory_uri() . '/dist/' . $js_file, array(), null, true );
 		}
 	}
 }
