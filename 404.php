@@ -1,60 +1,28 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package Plac
- */
-
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'plac' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'plac' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'plac' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$plac_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'plac' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$plac_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+<main id="primary" class="site-main">
+  <section class="flex flex-col md:flex-row min-h-[80vh]">
+    <div class="w-full md:w-1/3 bg-[#001F5C] text-white p-8 flex flex-col justify-center">
+      <h2 class="text-2xl font-bold mb-4">Restons en contact</h2>
+      <p class="mb-4">Notre équipe est là pour vous répondre.</p>
+      <ul class="mb-4">
+        <li class="font-semibold">Par email</li>
+        <li class="text-neutral-200">contact@plac.fr</li>
+      </ul>
+      <ul>
+        <li class="font-semibold">Par téléphone</li>
+        <li class="text-neutral-200">+33 07 64 24 54 87</li>
+      </ul>
+    </div>
+    <div class="w-full md:w-2/3 p-8 flex flex-col justify-center">
+      <h1 class="text-3xl font-bold mb-4">404 - Page introuvable</h1>
+      <p class="mb-4">La page que vous recherchez n'existe pas ou a été déplacée. Vous pouvez retourner à l'accueil ou remplir le formulaire ci-dessous pour nous contacter.</p>
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block bg-blue-600 text-white px-4 py-2 rounded mb-6">Retour à l'accueil</a>
+    </div>
+  </section>
+</main>
 
 <?php
 get_footer();
