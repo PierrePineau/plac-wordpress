@@ -21,7 +21,7 @@ get_header();
 
     <!-- Colonne de droite : Contact -->
     <div class="w-full md:w-1/2 p-8 flex flex-col justify-center items-start">
-      <h3 class="text-2xl font-bold mb-4">Restons en contact</h3>
+      <h3 class="text-2xl font-bold mb-4">Prendre contact</h3>
       <p class="mb-4">Notre équipe est là pour vous répondre.</p>
       <div class="mb-6">
         <ul class="mb-4">
